@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Christmas Trivia Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <audio id="bgMusic" loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div id="instructions">
+    <h2>Welcome to the Christmas Trivia Game!</h2>
+    <p>Welcome to the Christmas Trivia Adventure! Get ready to embark on a journey filled with fun questions, surprises, and delightful rewards. Here's how to play:</p>
+    <ol>
+        <li>Answer questions with three multiple-choice options.</li>
+        <li>Every correct answer reveals a special prize.</li>
+        <li>Checkpoint challenges let you risk your prizes to continue or keep them safe.</li>
+        <li>Complete the journey to collect all your prizes.</li>
+        <li>Use one of two available Jokers if you need assistance:</li>
+            <ul>
+                <li>Joker 1: Eliminate one incorrect option, making your choice easier.</li>
+                <li>Joker 2: Call a friend or family member for help.</li>
+            </ul>
+        <li>Remember, each Joker can only be used once throughout the game.</li>
+        <li>Have fun and enjoy the adventure!</li>
+    </ol>
+    <button onclick="startGame()">Play</button>
+</div>
+
+<div id="gift-machine-message" class="modal">
+  <div class="modal-content">
+    <span class="close-button">×</span>
+    <h2>Oh no, the Gift Machine's Love Meter is Depleted! 😢</h2>
+    <p>The journey's been a blast, and the Gift Machine has been working overtime to prepare your surprises! It seems it's running low on love. To refill its love tank and keep the excitement going, would you consider dedicating your 30th birthday gifts to it? Press on to fuel the fun!</p>
+    <button onclick="keepPlaying()">Yes, Keep the Fun Going!</button>
+    <button onclick="stopGame()">I'll Stop Here</button>
+  </div>
+</div>
+
+<div id="love-replenish-message" class="modal">
+  <div class="modal-content">
+    <span class="close-button">×</span>
+    <h2>The Gift Machine Needs Your Love! 💖</h2>
+    <p>You're doing great, but our Gift Machine thrives on love! It's just a little short on affection to move forward. If you're willing to share 50 kisses to show your love, we can jumpstart the joy and continue our festive adventure. Are you ready to spread the love and play on?</p>
+    <button onclick="replenishLove()">Replenish with Love</button>
+    <button onclick="endGame()">No, I'll Stop Here</button>
+  </div>
+</div>
+
+    <div id="game" style="display:none;">
+    <h1>Welcome to the Christmas Trivia Game!</h1>
+    <div id="question"></div>
+    <div id="options">
+        <button onclick="selectOption('A')">A</button>
+        <button onclick="selectOption('B')">B</button>
+        <button onclick="selectOption('C')">C</button>
+    </div>
+    <div id="result"></div>
+    <button id="next" class="highlighted-next-button" onclick="nextQuestion()">Next Question</button>
+    <!-- Joker button -->
+    <div id="joker">
+        <button class="joker-button" onclick="useJoker('eliminate')">Eliminate an Option</button>
+        <button class="joker-button" onclick="useJoker('phoneCall')">Phone a Friend</button>
+    </div>
+</div>
+
+<!-- Scattergories Section -->
+<div id="scattergories" style="display:none;">
+    <h2>Let's Play Scattergories!</h2>
+    <p>Here are your categories. You have 2 minutes to think of items starting with the letter <span id="letter"></span>:</p>
+    <ol id="categories-list"></ol>
+    <p>Time left: <span id="timer">120</span> seconds</p>
+    <button onclick="endScattergories()">Done</button>
+</div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

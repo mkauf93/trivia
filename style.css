@@ -1,0 +1,161 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+ol {
+    list-style-position: inside;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#options button {
+    display: block;
+    width: 60%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+#game h1 {
+    font-size: 1.3em;
+    color: #000000;
+}
+
+#game {
+    position: relative; /* Added for relative positioning */
+    background-color: white;
+    margin: auto;
+    width: 50%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#next {
+    display: none;
+}
+
+.highlighted-next-button {
+    padding: 15px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #4CAF50;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.highlighted-next-button:hover {
+    background-color: #45a049;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Container for the joker buttons */
+#joker {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-align: right; /* Right align the buttons */;
+}
+/* Styles for each joker button */
+#joker button {
+    background-color: #f39c12; /* Fun orange color */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block; /* Stack buttons vertically */
+    margin-bottom: 1px; /* Space between buttons */
+}
+
+#joker button:hover {
+    background-color: #e67e22; /* Slightly darker orange */
+}
+
+
+
+/* Celebration styles */
+.celebration {
+    font-size: 1.5em;
+    color: #4CAF50;
+    margin-top: 50px;
+    text-align: left;
+    animation: celebration-animation 1s 3;
+}
+
+@keyframes celebration-animation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+#scattergories {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#scattergories ol {
+    text-align: left;
+    display: inline-block;
+    margin: auto;
+    font-size: 20px;
+    font-weight: bold;
+}
